@@ -1,0 +1,39 @@
+nav img {
+    width: 180px;
+    margin: 0 auto;
+}
+nav span {
+    margin: 10px 0;
+}
+.content {
+    height: 500px;
+    margin: 10px auto;
+    overflow: auto;
+}
+.content .header {
+    height: 320px;
+}
+.content .header h1 {
+    padding: 20px;
+    margin: 0 auto;
+}
+.content .body {
+    margin: 0 auto;
+}
+
+.button {
+    width: 200px;
+    padding: 20px;
+    margin: 40px auto;
+    border: 1px solid blue;
+}
+
+ul.nutrition {
+    padding: 20px;
+}
+
+ul.nutrition li {
+    width: 200px;
+    padding: 10px 20px;
+    margin-bottom: 3px;
+}
