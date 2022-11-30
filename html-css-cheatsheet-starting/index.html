@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <title>CSS Gradient Borders</title>
+</head>
+<body>
+    <header>
+        <h1>Gradient Borders in CSS</h1>
+    </header>
+    <main>
+        <section>
+            <h4>The basic way to create gradient borders is to use the <code>border-image</code> property.</h4>
+            <p class="gradient-1">
+                <code>
+                    <span class="open-css"> .gradient-1 { </span>
+                        <span class="tab"> border-width: 4px;</span>
+                        <span class="tab"> border-style: solid;</span>
+                        <span class="tab"> border-image: linear-gradient(to right, navy, orchid) 1;</span>
+                    }
+                </code>
+            </p>
+            <p>The linear gradient CSS function builds a gradient from a given set of properties. In plain English, this border is built as a gradient starting with the <code>navy</code> CSS color and transitioning to the CSS <code>orchid</code> color at <code>right.</code></p>
+            <br>
+            <h4>But a problem with this approach is that we cannot apply a border radius.</h4>
+            <p class="gradient-2">
+                <code>
+                    <span class="open-css"> .gradient-2 { </span>
+                        <span class="tab"> border-width: 4px;</span>
+                        <span class="tab"> border-style: solid;</span>
+                        <span class="tab"> border-image: linear-gradient(to right, navy, orchid) 1;</span>
+                        <span class="tab"> border-radius: 50em [Not Functional.]</span>
+                    }
+                </code>
+            </p>
+        </section>
+        <br><br>
+        <section>
+            <h4>To address this issue, we can instead use the <code>background-clip</code> property.</h4>
+            <p class="gradient-3">
+                <code>
+                    <span class="open-css"> .gradient-3 { </span>
+                        <span class="tab"> background: linear-gradient(white, white) padding-box,</span>
+                        <span class="tab tab-2"> linear-gradient(to right, navy, orchid) border-box;</span>
+                        <span class="tab"> border-radius: 25px;</span>
+                        <span class="tab"> border: 4px solid transparent;</span>
+                    }
+                </code>
+            </p>
+            <p>Here the linear gradient CSS function is used to build two separate color blocks.</p>
+            <p>The first line ending in <code>padding-box</code> builds a white background for the content, while the second line ending in <code>border-box</code> builds our gradient.</p>
+            <p>Finally, we need to pass in a width for a transparent border.</p>
+        </section>
+        <br><br>
+        <section>
+            <h4>Open up an Inspector window in your browser and experiment!</h4>
+            <p>What happens when...</p>
+            <ul>
+                <li>you change one of the colors in line 1?</li>
+                <li>you change the direction in the first property of line 2? See <a href="https://css-tricks.com/css3-gradients/">CSS tricks</a> for more info.</li>
+                <li>you change the border-radius in line 3?</li>
+                <li>you change any of the properties in line 4?</li>
+                <li>you use an <code>rgba()</code> color in line 4 instead of <code>transparent</code>?</li>
+            </ul>
+            
+            <h4>Get creative!</h4>
+
+        </section>
+    </main>
+    <footer></footer>
+</body>
+</html>

@@ -1,0 +1,86 @@
+:root {
+    --header-height: 150px
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    margin: auto;
+    height: var(--header-height);
+    width: 100%;
+    background-color: navy;
+    opacity: 0.8;
+}
+
+footer {
+    height: calc(0.2 * var(--header-height));
+    background-color: navy;
+}
+header h1 {
+    padding-left: 80px;
+    color: ghostwhite;
+    font-size: 48px;
+    line-height: 1;
+    height: auto;
+}
+
+main {
+    background-color: ghostwhite;
+    top: var(--header-height);
+    padding: 50px 80px 0;
+}
+
+main h4, p, li {
+    font-family: sans-serif;
+}
+
+main h4 {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+main p:not([class*="gradient"]) {
+    font-size: 16px;
+}
+
+main span.open-css {
+    display: block;
+    color:chocolate;
+}
+
+main span.tab {
+    display: block;
+    padding-left: 25px;
+    color: darkslateblue;
+}
+
+main span.tab-2 {
+    padding-left: 7.5rem;
+}
+
+p[class*="gradient-"] {
+    padding: 25px;
+}
+
+.gradient-1 {
+    border-width: 4px;
+    border-style: solid;
+    border-image: linear-gradient(to right, navy, orchid) 1;
+}
+
+.gradient-2 {
+    border-width: 4px;
+    border-style: solid;
+    border-image: linear-gradient(to right, navy, orchid) 1;
+    border-radius: 50em; 
+}
+
+.gradient-3 {
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(to right, navy, orchid) border-box;
+    border-radius: 25px;
+    border: 4px solid transparent;
+}
