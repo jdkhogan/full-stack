@@ -1,0 +1,21 @@
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+nav li {
+    display: inline-block;
+    width: 80px;
+}
+
+main {
+    position: relative;
+    top: 80px;
+}
+
+.supporting .col {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+}
