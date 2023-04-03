@@ -1,0 +1,100 @@
+html {
+    font-size: 16px;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif; 
+}
+
+p {
+    font-family: 'Arial Narrow', sans-serif;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+body {
+    margin: 0;
+}
+
+.container {
+    padding: 15px 30px;
+    display: flex;
+}
+
+header {
+    background-color: aliceblue;
+    box-shadow: 2px 2px 10px lightgray;
+}
+.navbar-brand img {
+    height: 60px;
+    width: auto;
+    transform: rotate(180deg);
+}
+
+ul.navbar {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+li.menu-item {
+    list-style: none;
+    text-transform: uppercase;
+}
+
+main .container {
+    flex-direction: column;
+}
+
+.mission, .team {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.mission .title {
+    text-transform: uppercase;
+
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+.single-product a {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.single-product:hover a {
+    text-decoration: underline;
+}
+
+.single-product img {
+    margin: 15px;
+    border-radius: 15px;
+}
+
+footer {
+    background-color: aliceblue;
+    border-top: 1px solid navy;
+}
+
+ul.footer {
+    padding: 0;
+    text-align: end;
+    margin-left: auto;
+}
+
+li.footer.menu-item {
+    margin-bottom: 30px;
+}
