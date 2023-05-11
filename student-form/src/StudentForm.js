@@ -12,20 +12,26 @@ function StudentForm() {
         foodOptions: "Extra Sloppy Joe"
     });
 
-    function handleUserInput(e) {
+    function handleInput(e) {
         setState({
             ...state, [e.target.name]: e.target.value
         });
     }
     
     let numberFields = ['age', 'homeroom', 'ID'].map(el => {
-        return <div><label for={el}>{el}: </label><input name={el} type="number" min="0" onChange={handleUserInput} value={state.el} /></div>
+        return <div>
+            <label htmlFor={el}>{el}: </label>
+            <input name={el} type="number" min="0" onChange={handleInput} value={state.el} />
+        </div>
     });
 
     function buildRadio(name, options) {
         return options.map(option => {
-            return <><input type="radio" id={option.id} name={name} value={option.val} checked={state.name === option.val}
-            onChange={handleUserInput} /><label for={option.id}>{option.val}</label></>
+            return <>
+            <input type="radio" id={option.id} name={name} value={option.val} checked={state[name] === option.val}
+            onChange={handleInput} />
+            <label htmlFor={option.id}>{option.val}</label>
+            </>
         });
     }
 
@@ -50,16 +56,16 @@ function StudentForm() {
                 <h2>Add student data.</h2>
                 <form>
                     <div>
-                        <label for="firstName">First Name: </label>
-                        <input name="firstName" type="text" onChange={handleUserInput} value={state.firstName} />
+                        <label htmlFor="firstName">First Name: </label>
+                        <input name="firstName" type="text" onChange={handleInput} value={state.firstName} />
                         
-                        <label for="lastName">Last Name: </label>
-                        <input name="lastName" type="text" onChange={handleUserInput} value={state.lastName} />
+                        <label htmlFor="lastName">Last Name: </label>
+                        <input name="lastName" type="text" onChange={handleInput} value={state.lastName} />
                     </div>
                     
                     <div>   
-                        <label for="address">Address: </label>
-                        <input name="address" type="text" onChange={handleUserInput} value={state.address} />
+                        <label htmlFor="address">Address: </label>
+                        <input name="address" type="text" onChange={handleInput} value={state.address} />
                     </div>
 
                     {numberFields}
