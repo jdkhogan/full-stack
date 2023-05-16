@@ -13,6 +13,7 @@ export default function Categories () {
         { Object.keys(categories).map(slug => (
           <li key={slug}>
             <Link to={`${slug}`}>{slug}</Link>
+            <Outlet />
           </li>
         ))}
       </ul>
