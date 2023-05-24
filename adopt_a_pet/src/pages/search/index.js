@@ -2,20 +2,17 @@ import React, { useState, useEffect } from 'react';
 import Hero from '../../components/hero';
 import { getPets } from '../../api/petfinder';
 import Pet from '../../components/pet';
-// Import useSearchParams
+import {useSearchParams} from 'react-router-dom';
 
 const SearchPage = () => {
 
-  // Get searchParams object from useSearchParams
-
-  const petNameToFind = 'REPLACE ME';  // Get query parameter using searchParams object
-
+  const [searchParams] = useSearchParams();
+  const petNameToFind = searchParams.get('name');
   const [pets, setPets] = useState([]);
 
   useEffect(() => {
     async function getPetsData() {
       const petsData = await getPets('', petNameToFind);
-
       setPets(petsData);
     }
 
