@@ -1,0 +1,106 @@
+* {
+    --header-height: 80px;
+    --footer-height: 80px;
+}
+
+.App {
+    display: grid;
+    grid-template-rows: var(--header-height) auto var(--footer-height);
+    text-align: center;
+}
+
+
+header {
+    padding: 1.5rem 0;
+    background-color: white;
+    color: #282c34;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #00000080;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+header h4 {
+    margin: 0;
+    margin-right: auto;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
+}
+
+.search {
+    border-radius: 24px;
+    border: 1px solid #a9a9a9;
+    padding: 4px 8px;
+    min-width: 300px;
+    font-size: 14px;
+}
+  
+.search-button {
+    display: flex;
+    margin-left: -35px;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    width: 24px;
+    border: none;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.1s ease-in;
+}
+
+.search-button:hover,
+.search-button:focus {
+    background-color: #eaeaea;
+}
+
+
+footer {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    padding: 1rem;
+    background-color: #282c34;
+    justify-content: center;
+    font-size: 1rem;
+    color: white;
+}
+
+main {
+    grid-row: 2;
+    background-image: url('https://images.unsplash.com/20/cambridge.JPG?ixlib…fDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1447&q=80');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+
+.wrapper {
+    display: grid;
+    padding: 3rem 0;
+    min-height: calc(100% - 6rem);
+    grid-template-columns: min(580px, 100%) min(580px, 100%);
+    grid-column-gap: 40px;
+    justify-content: center;
+}
+
+.wrapper > * {
+    background-color: #000000a0;
+    color: white;
+    padding: 30px 0;
+}
+
+.wrapper > .grid-left {
+    grid-column: 1;
+}
+
+.wrapper > .grid-right {
+    grid-column: 2;
+}
+
