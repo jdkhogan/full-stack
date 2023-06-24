@@ -29,40 +29,23 @@ header .container .app-title {
     font-size: inherit;
 }
 
-.search-form {
+header .search-form {
     display: flex;
     align-items: center;
     margin-left: 60px;
 }
 
-.search {
+header .search {
     border-radius: 24px;
     border: 1px solid #a9a9a9;
     padding: 4px 8px;
     min-width: 300px;
     font-size: 14px;
 }
-  
-.search-button {
-    display: flex;
-    margin-left: -35px;
-    align-items: center;
-    justify-content: center;
-    height: 24px;
-    width: 24px;
-    border: none;
-    background: transparent;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 12px;
-    transition: background-color 0.1s ease-in;
-}
 
-.search-button:hover,
-.search-button:focus {
-    background-color: #eaeaea;
+header .search-country {
+    margin-right: 30px;
 }
-
 
 footer {
     position: fixed;
