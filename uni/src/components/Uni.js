@@ -1,16 +1,19 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { useParams, Link } from 'react-router-dom';
 
-export default function Article () {
-  const articles = useSelector(selectArticles)
-  const { title } = useParams()
-  const article = articles[title]
-
-  return article ? (
-    <div className='article-container'>
-      <h1 className='article-title'>{article.title}</h1>
-      <p>By <Link to={`/authors/${article.author}`}>{article.author}</Link></p>
-    </div>
-  ) : <p> No article found with that title... </p>
+const Uni = ({ item }) => {
+    const {web_pages, country, name} = item;
+    
+    return name ? (
+        <div className='uni-container'>
+            <div className='uni-details'>
+                <h3 className='uni-name'>{name}</h3>
+                <p><a href={web_pages[0]} className="uni-website">University website</a> Country: {country}</p>
+            </div>
+            {/* TODO: Add btn to move a uni from UniList to Shortlist */}
+            {/* TODO: Add btn to remove a uni from Shortlist */}
+        </div>
+    ) : <p> No universities found... </p>
 }
+
+
+export default Uni;

@@ -1,6 +1,6 @@
 * {
     --header-height: 80px;
-    --footer-height: 80px;
+    --footer-height: 50px;
 }
 
 .App {
@@ -23,9 +23,10 @@ header .container {
     justify-content: space-between;
 }
 
-header h4 {
+header .container .app-title {
     margin: 0;
     margin-right: auto;
+    font-size: inherit;
 }
 
 .search-form {
@@ -75,8 +76,9 @@ footer {
 
 main {
     grid-row: 2;
-    background-image: url('https://images.unsplash.com/20/cambridge.JPG?ixlib…fDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1447&q=80');
-    background-size: cover;
+    background: url('https://images.unsplash.com/20/cambridge.JPG?ixlib…fDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1447&q=80'), 
+        #000;
+    background-size: 100%, auto; 
     background-repeat: no-repeat;
     min-height: calc(100vh - var(--header-height) - var(--footer-height));
 }
@@ -91,7 +93,7 @@ main {
 }
 
 .wrapper > * {
-    background-color: #000000a0;
+    background-color: #33333380;
     color: white;
     padding: 30px 0;
 }
@@ -104,3 +106,24 @@ main {
     grid-column: 2;
 }
 
+.uni-list {
+    padding: 0 30px;
+    text-align: left;
+}
+
+.uni-title {
+    margin: 0 0 30px;
+} 
+
+.uni-container {
+    margin-bottom: 30px;
+}
+
+
+.uni-name {
+    margin: 0 0 10px;
+}
+
+.uni-website {
+    margin-right: 15px;
+}

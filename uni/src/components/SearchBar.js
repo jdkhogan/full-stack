@@ -1,62 +1,58 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { createSearchParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 
-const Search = () => {
-    const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [items, setItems] = useState(null);
+const SearchBar = ({ setResults, setUniListTitle }) => {
+    const [searchQuery, setSearchQuery] = useState(null);
     
-    const countryInputRef = useRef();
-    const nameInputRef = useRef();
-
-    let search = null;
-
     const onSearchHandler = (e) => {
         e.preventDefault();
         
         if (e.target.classList.contains('search-country') ) {
-            const country = countryInputRef.current.value;
-            search = "country=" + country;
+            let countryQuery = e.target.elements.countrySearch.value;
+            if (countryQuery) {
+                countryQuery = countryQuery.toLowerCase();
+                setUniListTitle('Universities in ' + countryQuery[0].toUpperCase() + countryQuery.slice(1));
+                setSearchQuery("country=" + countryQuery);
+            }
         }
         
         if (e.target.classList.contains('search-name') ) {
-            const uniName = nameInputRef.current.value;
-            search = "name=" + uniName;
-        }
-    };
-
-    useEffect(() => {
-        fetch("http://universities.hipolabs.com/search?" + search)
-        .then((res) => res.json())
-        .then(
-            (result) => {
-                setIsLoaded(true);
-                setItems(result);
-            }, 
-            (error) => {
-                setIsLoaded(true);
-                setError(error);
+            let nameQuery = e.target.elements.nameSearch.value;
+            if (nameQuery) {
+                setUniListTitle('Universities matching: ' + nameQuery);
+                setSearchQuery("name=" + nameQuery.toLowerCase());
             }
-            );
-      }, []);
+        }
+        
+        fetchData(searchQuery);
+    };
+    
+    const fetchData = (searchQuery) => {
+        fetch("http://universities.hipolabs.com/search?" + searchQuery)
+            .then(res => res.json())
+            .then(data => setResults(data))
+            .catch(err => console.log(err))
+    }
 
     return (
         <>
             <form onSubmit={onSearchHandler} className="search-form search-country">
-                <input type="text" className="search" placeholder="Search by country" ref={countryInputRef} />
-                <button type="submit" className="search-button">
-                    🔎
-                </button>
+                <input type="text" 
+                    id="countrySearch"
+                    className="search" 
+                    placeholder="Search by country" 
+                />
+                <button type="submit" className="search-button">🔎</button>
             </form>
             <form onSubmit={onSearchHandler} className="search-form search-name">
-                <input type="text" className="search" placeholder="Search by university name" ref={nameInputRef} />
-                <button type="submit" className="search-button">
-                    🔎
-                </button>
+                <input type="text" 
+                    id="nameSearch"
+                    className="search" 
+                    placeholder="Search by university name"
+                />
+                <button type="submit" className="search-button">🔎</button>
             </form>
         </>
-
     );
 };
 
-export default Search;
+export default SearchBar;
