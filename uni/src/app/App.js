@@ -29,7 +29,7 @@ function App() {
                 <div className="grid-right">
                     { shortlist && shortlist.length > 0 
                         ? <DisplayList items={shortlist} title={shortlist ? "Shortlist" : ""}/> 
-                        : <h4>Add items from left to begin</h4>
+                        : <h4>Build your  very own shortlist!</h4>
                     }
                 </div>
             </div>
