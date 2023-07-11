@@ -9,8 +9,10 @@ const DisplayList = ({ items, title }) => {
             <h2 className='uni-title'>{title}</h2>
             {items.map((item, i) => {
                 return <>
-                    <Uni item={item} key={i}/>
-                    <button key="button_{i}">&#10133;</button>
+                    <div class="uni">
+                        <Uni item={item} key={i}/>
+                        <button  key="button_{i}">&#10133;</button>
+                    </div>
                 </>
                 
 
