@@ -60,8 +60,6 @@ const tempEmoji = emojiKeys[Math.floor(Math.random() * emojiKeys.length)];
 const accessoryKeys = Object.keys(weatherEmojis[temp]['accessory']);
 const accessoryEmoji = accessoryKeys[Math.floor(Math.random() * accessoryKeys.length)];
 const accessory = weatherEmojis[temp]['accessory'][accessoryEmoji];
-// console.log(`${tempEmoji}`);
-// console.log(`${accessoryEmoji} ${accessory}`);
 
 
 const output = `Today's temp is ${randTemp}F.
