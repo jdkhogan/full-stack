@@ -10,6 +10,13 @@ class App extends Component {
     error: null
   }
 
+  user = {
+    name: 'John Doe',
+    email: 'johndoe@gmail.com',
+    username: 'johndoe',
+    image: null
+  }
+
   getUsers() {
     axios
       .get("https://randomuser.me/api/?results=9")
