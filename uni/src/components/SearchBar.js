@@ -29,7 +29,14 @@ const SearchBar = ({ setResults, setUniListTitle }) => {
     const fetchData = (searchQuery) => {
         fetch("http://universities.hipolabs.com/search?" + searchQuery)
             .then(res => res.json())
-            .then(data => setResults(data))
+            .then(data => {
+                const taggedData = data.map((item, index) => {
+                    item['shortlisted'] = false;
+                    item['id'] = index;
+                    return item;
+                });
+                setResults(taggedData);
+            })
             .catch(err => console.log(err))
     }
 

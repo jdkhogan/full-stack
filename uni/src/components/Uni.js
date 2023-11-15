@@ -9,8 +9,6 @@ const Uni = ({ item }) => {
                 <h3 className='uni-name'>{name}</h3>
                 <p><a href={web_pages[0]} className="uni-website">University website</a> Country: {country}</p>
             </div>
-            {/* TODO: Add btn to move a uni from UniList to Shortlist */}
-            {/* TODO: Add btn to remove a uni from Shortlist */}
         </div>
     ) : <p> No universities found... </p>
 }
