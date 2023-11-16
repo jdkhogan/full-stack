@@ -3,7 +3,7 @@
 import Uni from './Uni';
 import React, { useState } from 'react';
 
-const DisplayList = ({ setItems, items, title }) => {
+const DisplayList = ({ setItems, items }) => {
     
     const handleToggle = (index) => {
         const newList = [...items];
@@ -30,7 +30,7 @@ const DisplayList = ({ setItems, items, title }) => {
             <div className="grid-left">
                 { items && items.length > 0 
                     ? <div className='uni-list'>
-                        <h2 className='uni-title'>{title}</h2>
+                        <h2 className='uni-title'>Universities</h2>
                         {renderList(items.filter( item => item.shortlisted === false ))}
                     </div>
                     : <h4>Enter a search above to begin</h4>
@@ -39,7 +39,7 @@ const DisplayList = ({ setItems, items, title }) => {
             <div className="grid-right">
                 { items && items.some(item => item.shortlisted === true) 
                     ? <div className='uni-list'>
-                        <h2 className='uni-title'>{title}</h2>
+                        <h2 className='uni-title'>Shortlist</h2>
                         {renderList(items.filter( item => item.shortlisted === true ))}
                     </div>
                     : <h4>Build your very own shortlist!</h4>
